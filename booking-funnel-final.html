@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Free Strategy Call — Zata Digital Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:     #07091a;
+  --navy2:    #0d1128;
+  --navy3:    #111827;
+  --navy4:    #1a2240;
+  --gold:     #f5c842;
+  --gold2:    #e6b830;
+  --gold-dim: rgba(245,200,66,0.12);
+  --white:    #ffffff;
+  --grey1:    #c8d0e0;
+  --grey2:    #8a97ad;
+  --grey3:    #4a5a6a;
+  --border:   rgba(255,255,255,0.07);
+  --radius:   14px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── GRAIN ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+h1,h2,h3 { font-family: 'Cormorant Garamond', serif; font-weight: 700; line-height: 1.15; }
+em { font-style: italic; color: var(--gold); }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(7,9,26,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+}
+.nav-inner {
+  max-width: 960px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--white); text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-back {
+  font-size: 13px; color: var(--grey2);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--gold); }
+
+/* ── PAGE WRAPPER ── */
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 72px 24px 100px;
+  position: relative; z-index: 1;
+}
+
+/* ── GLOW ── */
+.page::before {
+  content: '';
+  position: absolute; top: -60px; right: -80px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--gold-dim) 0%, transparent 65%);
+  pointer-events: none; z-index: 0;
+}
+
+/* ── TOP LABEL ── */
+.top-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold-dim);
+  border: 1px solid rgba(245,200,66,0.25);
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 22px;
+}
+
+/* ── HEADLINE ── */
+.page-headline {
+  font-size: clamp(34px, 5.5vw, 58px);
+  max-width: 620px;
+  margin-bottom: 16px;
+  position: relative; z-index: 1;
+}
+.page-sub {
+  font-size: 16px; color: var(--grey1);
+  max-width: 520px; line-height: 1.75;
+  margin-bottom: 56px;
+  position: relative; z-index: 1;
+}
+
+/* ── TWO-COL LAYOUT ── */
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 36px;
+  align-items: start;
+  position: relative; z-index: 1;
+}
+@media (max-width: 720px) {
+  .booking-grid { grid-template-columns: 1fr; }
+}
+
+/* ── LEFT: WHAT TO EXPECT ── */
+.expect-card {
+  background: var(--navy3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 30px;
+  position: sticky; top: 100px;
+}
+.expect-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 18px; display: block;
+}
+.expect-card h2 {
+  font-size: clamp(22px, 3vw, 30px);
+  margin-bottom: 10px;
+}
+.expect-card > p {
+  font-size: 14px; color: var(--grey2); line-height: 1.7; margin-bottom: 32px;
+}
+
+/* Call meta */
+.call-meta {
+  display: flex; flex-direction: column; gap: 14px;
+  margin-bottom: 32px;
+}
+.call-meta-item {
+  display: flex; align-items: center; gap: 14px;
+}
+.call-meta-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  background: var(--navy4); border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.call-meta-text strong {
+  display: block; font-size: 14px; color: var(--white); font-weight: 600;
+}
+.call-meta-text span {
+  font-size: 13px; color: var(--grey2);
+}
+
+/* Divider */
+.expect-divider {
+  border: none; border-top: 1px solid var(--border); margin: 28px 0;
+}
+
+/* What we'll cover */
+.cover-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--grey3); margin-bottom: 14px; display: block;
+}
+.cover-list {
+  display: flex; flex-direction: column; gap: 11px;
+}
+.cover-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; color: var(--grey1); line-height: 1.5;
+}
+.cover-check {
+  color: var(--gold); font-size: 14px; flex-shrink: 0; margin-top: 1px;
+}
+
+/* Ms. Zata mini profile */
+.mini-profile {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 30px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.mini-avatar {
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 2px solid var(--gold);
+  object-fit: cover; flex-shrink: 0;
+  background: var(--navy4);
+}
+.mini-name {
+  font-size: 14px; font-weight: 600; color: var(--white);
+}
+.mini-title {
+  font-size: 12px; color: var(--grey2); margin-top: 2px;
+}
+.mini-badge {
+  display: inline-block;
+  background: var(--gold-dim); border: 1px solid rgba(245,200,66,0.25);
+  border-radius: 100px; padding: 2px 10px;
+  font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--gold); margin-top: 4px;
+}
+
+/* ── RIGHT: FORM ── */
+.form-card {
+  background: var(--navy3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 30px;
+}
+.form-card h3 {
+  font-size: clamp(20px, 2.5vw, 26px);
+  margin-bottom: 6px;
+}
+.form-card > p {
+  font-size: 14px; color: var(--grey2); margin-bottom: 30px; line-height: 1.6;
+}
+
+/* Steps indicator */
+.steps-bar {
+  display: flex; align-items: center; gap: 0;
+  margin-bottom: 32px;
+}
+.step-dot {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; color: var(--grey3);
+}
+.step-dot.active { color: var(--gold); }
+.step-dot.done { color: var(--grey2); }
+.step-circle {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--navy4); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; color: var(--grey3);
+  flex-shrink: 0;
+}
+.step-dot.active .step-circle {
+  background: var(--gold); color: var(--navy); border-color: var(--gold);
+}
+.step-dot.done .step-circle {
+  background: var(--navy4); border-color: var(--grey3); color: var(--grey2);
+}
+.step-line {
+  flex: 1; height: 1px; background: var(--border); margin: 0 8px;
+}
+
+/* Form fields */
+.form-group {
+  margin-bottom: 18px;
+}
+.form-label {
+  display: block;
+  font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--grey2); margin-bottom: 8px;
+}
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  background: var(--navy2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 13px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; color: var(--white);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+}
+.form-input::placeholder,
+.form-textarea::placeholder { color: var(--grey3); }
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-dim);
+}
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a97ad' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+.form-select option { background: var(--navy2); color: var(--white); }
+.form-textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+
+/* Two col fields */
+.form-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+}
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+/* Submit button */
+.form-submit {
+  width: 100%;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 700;
+  padding: 16px;
+  border-radius: 8px;
+  border: none; cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 4px 24px rgba(245,200,66,0.28);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.form-submit:hover {
+  background: var(--gold2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(245,200,66,0.38);
+}
+
+.form-privacy {
+  text-align: center;
+  font-size: 12px; color: var(--grey3);
+  margin-top: 14px; line-height: 1.5;
+}
+
+/* ── SUCCESS STATE ── */
+.success-state {
+  display: none;
+  text-align: center;
+  padding: 20px 0;
+}
+.success-icon {
+  width: 72px; height: 72px;
+  background: var(--gold-dim);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 24px;
+}
+.success-state h3 { font-size: 26px; margin-bottom: 10px; }
+.success-state p { font-size: 14px; color: var(--grey2); line-height: 1.7; max-width: 340px; margin: 0 auto; }
+
+/* ── TRUST STRIP ── */
+.trust-strip {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 28px;
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+  position: relative; z-index: 1;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--grey2);
+}
+.trust-item span { font-size: 18px; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 24px;
+  text-align: center;
+  font-size: 13px; color: var(--grey3);
+  position: relative; z-index: 1;
+}
+footer a { color: var(--grey2); text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fu { animation: fadeUp 0.65s ease both; }
+.d1 { animation-delay: 0.05s; }
+.d2 { animation-delay: 0.18s; }
+.d3 { animation-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Zata <span>Digital Solutions</span></a>
+    <a href="https://zatadigitalsolutions.com/" class="nav-back">← Back to Main Page</a>
+  </div>
+</nav>
+
+<!-- PAGE -->
+<div class="page">
+
+  <!-- Header -->
+  <div class="fu d1">
+    <div class="top-label">📅 Free Strategy Call</div>
+  </div>
+  <h1 class="page-headline fu d2">
+    Let's map out your <em>funnel together.</em>
+  </h1>
+  <p class="page-sub fu d3">
+    This is a free 20-minute call. No pitch, no pressure. Just a real conversation
+    about your goals and exactly what your funnel needs to start converting.
+  </p>
+
+  <!-- Two-col grid -->
+  <div class="booking-grid">
+
+    <!-- LEFT: What to expect -->
+    <div class="expect-card fu d3">
+      <span class="expect-label">WHAT TO EXPECT</span>
+      <h2>Your free <em>20-minute call.</em></h2>
+      <p>We'll cover everything I need to map out the right funnel structure for your insurance niche.</p>
+
+      <div class="call-meta">
+        <div class="call-meta-item">
+          <div class="call-meta-icon">⏱️</div>
+          <div class="call-meta-text">
+            <strong>20 Minutes</strong>
+            <span>Quick, focused, and action-oriented</span>
+          </div>
+        </div>
+        <div class="call-meta-item">
+          <div class="call-meta-icon">🎥</div>
+          <div class="call-meta-text">
+            <strong>Zoom or Google Meet</strong>
+            <span>Link sent to your email after booking</span>
+          </div>
+        </div>
+        <div class="call-meta-item">
+          <div class="call-meta-icon">💸</div>
+          <div class="call-meta-text">
+            <strong>Completely Free</strong>
+            <span>No credit card, no obligation</span>
+          </div>
+        </div>
+        <div class="call-meta-item">
+          <div class="call-meta-icon">⚡</div>
+          <div class="call-meta-text">
+            <strong>Built on systeme.io</strong>
+            <span>Free platform, zero monthly fees to start</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="expect-divider">
+
+      <span class="cover-label">We'll talk through</span>
+      <div class="cover-list">
+        <div class="cover-item"><span class="cover-check">✓</span> Your niche and ideal client profile</div>
+        <div class="cover-item"><span class="cover-check">✓</span> Your current lead generation challenges</div>
+        <div class="cover-item"><span class="cover-check">✓</span> The right funnel structure for your offer</div>
+        <div class="cover-item"><span class="cover-check">✓</span> Which package fits your goals and budget</div>
+        <div class="cover-item"><span class="cover-check">✓</span> Your timeline and next steps</div>
+      </div>
+
+      <!-- Mini profile -->
+      <div class="mini-profile">
+        <img
+          src="https://d1yei2z3i6k35z.cloudfront.net/15653632/69a7ea914164d_woww.png"
+          alt="Ms. Zata"
+          class="mini-avatar"
+        >
+        <div>
+          <div class="mini-name">Ms. Zata</div>
+          <div class="mini-title">Funnel Strategist · systeme.io Expert</div>
+          <div class="mini-badge">⚡ Zata Digital Solutions</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div class="form-card fu d3">
+
+      <!-- Steps bar -->
+      <div class="steps-bar">
+        <div class="step-dot active" id="step1-dot">
+          <div class="step-circle">1</div>
+          <span>Your Info</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-dot" id="step2-dot">
+          <div class="step-circle">2</div>
+          <span>Your Niche</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-dot" id="step3-dot">
+          <div class="step-circle">3</div>
+          <span>Confirm</span>
+        </div>
+      </div>
+
+      <h3 id="form-title">Tell me about <em>yourself.</em></h3>
+      <p id="form-desc">Fill in your details so I can prepare for our call.</p>
+
+      <!-- FORM -->
+      <form id="booking-form" onsubmit="return false;">
+
+        <!-- Step 1 -->
+        <div id="step-1">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input class="form-input" type="text" placeholder="e.g. Maria" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input class="form-input" type="text" placeholder="e.g. Santos" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input class="form-input" type="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number (optional)</label>
+            <input class="form-input" type="tel" placeholder="+1 (555) 000-0000">
+          </div>
+          <button type="button" class="form-submit" onclick="goToStep(2)">Continue →</button>
+          <p class="form-privacy">🔒 Your information is 100% secure. We hate spam.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div id="step-2" style="display:none;">
+          <div class="form-group">
+            <label class="form-label">Your Insurance Niche</label>
+            <select class="form-select" required>
+              <option value="" disabled selected>Select your niche</option>
+              <option>Medicare Supplement</option>
+              <option>Final Expense</option>
+              <option>Term Life Insurance</option>
+              <option>Whole Life / VUL</option>
+              <option>Health Insurance (ACA/Marketplace)</option>
+              <option>Group Health Benefits</option>
+              <option>Multi-line / Independent Broker</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Do you currently have a funnel?</label>
+            <select class="form-select" required>
+              <option value="" disabled selected>Select one</option>
+              <option>No — I'm starting from scratch</option>
+              <option>Yes — but it's not converting</option>
+              <option>Yes — I just want to improve it</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Which package interests you?</label>
+            <select class="form-select">
+              <option value="" disabled selected>Select a package</option>
+              <option>Starter Funnel — $100</option>
+              <option>Full Funnel Build — $297</option>
+              <option>Done-For-You System — $497+</option>
+              <option>Not sure yet — let's talk</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Anything else I should know?</label>
+            <textarea class="form-textarea" placeholder="Tell me about your goals, your ideal client, or any challenges you're facing..."></textarea>
+          </div>
+          <button type="button" class="form-submit" onclick="goToStep(3)">Continue →</button>
+          <p class="form-privacy" style="margin-top:12px;cursor:pointer;color:var(--grey2);" onclick="goToStep(1)">← Back</p>
+        </div>
+
+        <!-- Step 3: Confirm -->
+        <div id="step-3" style="display:none;">
+          <div style="background:var(--navy2);border:1px solid var(--border);border-radius:10px;padding:24px 20px;margin-bottom:20px;">
+            <p style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">📋 Call Summary</p>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid var(--border);padding-bottom:10px;">
+                <span style="color:var(--grey2);">Duration</span>
+                <span style="color:var(--white);font-weight:500;">20 Minutes</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid var(--border);padding-bottom:10px;">
+                <span style="color:var(--grey2);">Format</span>
+                <span style="color:var(--white);font-weight:500;">Zoom / Google Meet</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid var(--border);padding-bottom:10px;">
+                <span style="color:var(--grey2);">Cost</span>
+                <span style="color:var(--gold);font-weight:600;">FREE</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;">
+                <span style="color:var(--grey2);">With</span>
+                <span style="color:var(--white);font-weight:500;">Ms. Zata</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:rgba(245,200,66,0.06);border:1px solid rgba(245,200,66,0.2);border-radius:10px;padding:16px 18px;margin-bottom:20px;font-size:13px;color:var(--grey1);line-height:1.6;">
+            ✅ <strong style="color:var(--white);">What happens next:</strong> Once you submit, I'll review your details and send a calendar invite to your email within 24 hours to confirm your preferred time.
+          </div>
+
+          <button type="button" class="form-submit" onclick="submitForm()">
+            Book My Free Strategy Call →
+          </button>
+          <p class="form-privacy" style="margin-top:12px;cursor:pointer;color:var(--grey2);" onclick="goToStep(2)">← Back</p>
+        </div>
+
+      </form>
+
+      <!-- Success -->
+      <div class="success-state" id="success-state">
+        <div class="success-icon">🎉</div>
+        <h3>You're <em>booked!</em></h3>
+        <p>
+          Thanks for reaching out! I'll review your details and send a calendar invite
+          to your email within 24 hours. Looking forward to our call!
+        </p>
+        <p style="margin-top:16px;font-size:13px;color:var(--grey3);">— Ms. Zata</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Trust strip -->
+  <div class="trust-strip">
+    <div class="trust-item"><span>🔒</span> Secure & Private</div>
+    <div class="trust-item"><span>💸</span> No Credit Card Required</div>
+    <div class="trust-item"><span>🚫</span> Zero Pressure or Pitch</div>
+    <div class="trust-item"><span>⚡</span> Built on systeme.io</div>
+    <div class="trust-item"><span>🤝</span> 100% Satisfaction Guarantee</div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom:10px;">
+    <a href="https://zatadigitalsolutions.com/">Zata Digital Solutions</a>
+    &nbsp;·&nbsp; © 2026 All rights reserved
+  </p>
+  <p style="font-size:12px;">Built on systeme.io · Ms. Zata · Funnel Strategist</p>
+</footer>
+
+<script>
+  function goToStep(step) {
+    // Hide all steps
+    document.getElementById('step-1').style.display = 'none';
+    document.getElementById('step-2').style.display = 'none';
+    document.getElementById('step-3').style.display = 'none';
+
+    // Show target step
+    document.getElementById('step-' + step).style.display = 'block';
+
+    // Update step dots
+    var dots = ['step1-dot','step2-dot','step3-dot'];
+    dots.forEach(function(id, i) {
+      var el = document.getElementById(id);
+      el.classList.remove('active','done');
+      if (i + 1 === step) el.classList.add('active');
+      if (i + 1 < step)  el.classList.add('done');
+    });
+
+    // Update title & desc
+    var titles = [
+      'Tell me about <em>yourself.</em>',
+      'Tell me about your <em>niche.</em>',
+      'Almost there — <em>confirm your call.</em>'
+    ];
+    var descs = [
+      'Fill in your details so I can prepare for our call.',
+      'Help me understand your business so we can hit the ground running.',
+      'Review the details below and lock in your free call.'
+    ];
+    document.getElementById('form-title').innerHTML = titles[step - 1];
+    document.getElementById('form-desc').textContent = descs[step - 1];
+
+    // Scroll to form top on mobile
+    document.querySelector('.form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function submitForm() {
+    document.getElementById('booking-form').style.display = 'none';
+    document.getElementById('success-state').style.display = 'block';
+    document.getElementById('form-title').innerHTML = 'You\'re all set!';
+    document.getElementById('form-desc').textContent = '';
+    // Hide step bar
+    document.querySelector('.steps-bar').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
